@@ -8,12 +8,12 @@ const validate = (name, valor) => {
     retorno.email= 'Ingrese un E-mail valido'
     return retorno
     }
-    if(valor.length < 0){
+    if(valor.length < 1){
     retorno.email= 'Ingrese un E-mail valido'
     return retorno
     }
     if(valor.length > 35){
-    retorno.email= 'Ingrese un E-mail valido'
+    retorno.email= 'El E-mail no puede superar los 35 caracteres'
     return retorno
     }
     retorno.email = ''

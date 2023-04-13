@@ -1,12 +1,9 @@
 import { useState } from "react"
 import validate from "./validation"
-
+import './form.css'
 
 
 const Form = ({login}) => {
-
-    
-
 const [userData, setUserData] = useState({
          email: '',
          password: ''
@@ -49,18 +46,18 @@ const submitHandler = (event) => {
     return(
     <form onSubmit={submitHandler}>
        
-        <h1>"LOGIN"</h1>
+        <h1 className='titulo'>"LOGIN"</h1>
         
     
         <label htmlFor="email"> E-mail: </label>
-            <input name="email" type="email" placeholder="ingrese su E-mail" value= {userData.email} onChange={handleChanges} />
-             {errors.email && <p>{errors.email}</p>}
-         <hr />
+            <input name="email" type="email" placeholder="ingrese su E-mail" value= {userData.email} onChange={handleChanges} class='email'/>
+             {errors.email && <p style={{color: 'red'}}>{errors.email}</p>}
+       <br />
         
         <label htmlFor="password"> Password: </label>
         <input name="password" type="text" placeholder="password" value= {userData.password} onChange={handleChanges}/>
-            {errors.password && <p>{errors.password}</p>}
-            <hr />
+            {errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
+        <br />
         <button disabled={!userData.email || !userData.password || errors.email || errors.password}>Submit</button>
     </form>
     )

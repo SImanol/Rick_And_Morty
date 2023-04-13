@@ -1,0 +1,21 @@
+.boton{
+    background-color: rgb(174, 255, 0);
+    color: rgb(0, 0, 0) ;
+    border-color: white;
+    border-bottom: 20px;
+    border-radius: 20px;
+    margin-top:16px ;
+    float: right;
+}
+.search{
+    font-size: medium;
+    font-variant-position: initial;
+    background-color: black;
+    color: chartreuse;
+    border-color: white;
+    font-style: oblique;
+    border-radius: 200px;
+    margin: 15px;
+
+    float: right;
+}

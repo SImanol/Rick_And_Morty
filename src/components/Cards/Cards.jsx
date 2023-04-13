@@ -1,12 +1,12 @@
-import Card from './Card';
-
+import Card from '../Card/Card';
+import './cards.css'
 const Cards = ({ characters, onClose }) => {
    return (
-      <div>
+      <div id = 'cards'>
          {
             characters.map((props) => {
                return(
-                  <Card
+                  <Card 
                      key={props.id}
                      id={props.id}
                      name={props.name}

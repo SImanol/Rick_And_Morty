@@ -1,0 +1,55 @@
+.all {
+    transition: all 0.3s ease-in-out;
+    margin: 15px;
+    width: auto;
+    padding: auto;
+    border-radius: 50px;
+    size-adjust: 10px;
+    float: left;
+    flood-opacity: initial;
+    background: radial-gradient(rgb(0, 0, 0), rgb(21, 255, 0));
+    z-index: 2;
+    cursor: pointer;
+}
+.all:hover{
+    box-shadow: 0 0.0rem 0 0.4rem rgb(229, 255, 0);
+}
+.click{
+    box-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+    text-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+    background-color: rgb(174, 255, 0);
+    color: rgb(0, 0, 0) ;
+    border-color: white;
+    border-bottom: 20px;
+    border-radius: 20px;
+    margin-top:11px ;
+    float: left;
+}
+
+
+.text{
+width: 250px;
+padding: 20px;
+color: rgb(229, 255, 0);
+font-size: 10.5px;
+text-shadow: 0 0.4rem 0.5rem black
+
+}
+
+.img{
+width: 200px;
+border: 6px ;
+border-radius: 50px;
+border-style:hidden;
+;
+}
+
+.link{
+    color: rgb(53, 255, 2);
+    text-decoration:overline;
+    text-shadow: 0 0.4rem 0.5rem black;
+}
+
+.body{
+    margin-left:100px;
+}

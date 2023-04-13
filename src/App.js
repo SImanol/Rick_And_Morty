@@ -1,15 +1,14 @@
 import './App.css';
-import Cards from './components/Cards.jsx';
-import Nav from './components/Nav';
-import About from './components/About';
+import Cards from './components/Cards/Cards.jsx';
+import Nav from './components/Nav/Nav';
+import About from './components/About/About';
 import Form from './components/Form/Form';
 import axios from 'axios';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Route, Routes} from 'react-router-dom';
-import Detail from './components/Detail';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import Fav from './components/FAV/Fav';
+import Detail from './components/Detail/Detail';
+import { useState, useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+
 
 function App() {
    const [characters, setCharacters] = useState([]);
@@ -47,7 +46,7 @@ const API_KEY = 'f7b98da00af3.5752bdf326adf2dc07ad'
    }
 
    const onClose = (id) => {
-      const charactersFiltered = characters.filter(character => character.id !== Number(id))
+      const charactersFiltered = characters.filter(character => character.id !== (id))
       setCharacters(charactersFiltered)
    }
 
@@ -60,6 +59,7 @@ const API_KEY = 'f7b98da00af3.5752bdf326adf2dc07ad'
       <Route path= '/home' element= {<Cards characters={characters} onClose={onClose}/>}/>
       <Route path= '/about' element= {<About/>}/>
       <Route path= '/detail/:id' element={<Detail/>}/>
+      <Route path= '/favorites' element={<Fav/>}/>
      </Routes>
    
       </div>

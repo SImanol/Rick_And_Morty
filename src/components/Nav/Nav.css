@@ -1,0 +1,38 @@
+.nav{
+    color: black;
+    height: 50px;
+    border-bottom: 4px solid rgb(229, 255, 0);
+    background-color: black;
+    margin-left: 1px ;
+    margin-right: 1px;
+}
+.botonabout{
+    float: left;
+    color: rgb(174, 255, 0);
+    border-color: white;
+    border-bottom: 40px;
+    border-radius: 10px;
+    margin: 11px ;
+    padding: 6px;
+    font-style: oblique;
+
+}
+
+.botonhome{
+    float: left;
+    color: rgb(174, 255, 0) ;
+    border-color: white;
+    border-bottom: 40px;
+    border-radius: 10px;
+    margin: 11px ;
+    padding: 6px;
+    font-style: oblique;
+    text-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+}
+
+.botonhome:hover{
+    text-shadow: 0 0.1rem 0.4rem rgb(255, 255, 255);
+}
+.botonabout:hover{
+    text-shadow: 0 0.1rem 0.4rem rgb(255, 255, 255);
+}
