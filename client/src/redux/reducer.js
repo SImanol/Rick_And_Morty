@@ -5,20 +5,21 @@ const initialState = {
     allCharacters: [],
 }
 
-const reducer = (state=initialState, {type, payload}) =>{
+const reducer = (state = initialState, {type, payload}) =>{
     switch(type){
         case ADD_FAV:
-            return{
+            return {
                 ...state,
-                myFavorites: [...state.allCharacters, payload],
-                allCharacters: [...state.allCharacters, payload]
+                myFavorites: payload,
+                allCharacters: payload
             }
         case REMOVE_FAV:
             return {
                 ...state,
-                myFavorites: state.myFavorites.filter(fav => fav.id !== payload)
+                myFavorites: payload,
+                allCharacters: payload
             }
-            case FILTER:
+        case FILTER:
             const filterchar = state.allCharacters.filter(char => char.gender === payload)
             return{
                 ...state,
@@ -27,7 +28,7 @@ const reducer = (state=initialState, {type, payload}) =>{
                     ?[...state.allCharacters]
                     :filterchar
             }
-            case ORDER: 
+        case ORDER: 
             const allCharactersFav = [...state.allCharacters]
                         return{
                         ...state,
