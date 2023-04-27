@@ -1,47 +1,51 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-type";
+import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from "./actions-type";
 
 const initialState = {
     myFavorites: [],
-    allCharacters: [],
+    allCharactersFav: []
 }
 
-const reducer = (state = initialState, {type, payload}) =>{
-    switch(type){
+
+const reducer = (state = initialState, { type, payload }) => {
+    switch( type ){
         case ADD_FAV:
             return {
                 ...state,
                 myFavorites: payload,
-                allCharacters: payload
+                allCharactersFav: payload
             }
-        case REMOVE_FAV:
+
+        case REMOVE_FAV: 
             return {
                 ...state,
                 myFavorites: payload,
-                allCharacters: payload
+                allCharactersFav: payload
             }
+
         case FILTER:
-            const filterchar = state.allCharacters.filter(char => char.gender === payload)
-            return{
+            const allCharactersFiltered = state.allCharactersFav.filter(character => character.gender === payload)
+            return {
                 ...state,
-                myFavorites :
-                    payload === 'allcharacters'
-                    ?[...state.allCharacters]
-                    :filterchar
+                myFavorites: 
+                    payload === 'allCharacters'
+                    ? [...state.allCharactersFav]
+                    : allCharactersFiltered
             }
-        case ORDER: 
-            const allCharactersFav = [...state.allCharacters]
-                        return{
-                        ...state,
-                        myFavorites: 
-                        payload === 'A'
-                        ?allCharactersFav.sort((a, b) => a.id - b.id)
-                        :allCharactersFav.sort((a, b) => b.id - a.id)
-                    }
+
+        case ORDER:
+            const allCharactersFavCopy = [...state.allCharactersFav]
+            return {
+                ...state,
+                myFavorites:
+                    payload === 'A'
+                    ? allCharactersFavCopy.sort((a, b) => a.id - b.id)
+                    : allCharactersFavCopy.sort((a, b) => b.id - a.id)
+            }
 
         default:
-           return {...state}
+            return {...state}
     }
 }
 
 
-export default reducer
+export default reducer;
